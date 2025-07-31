@@ -14,3 +14,16 @@ app.get('/', (req, res) => {
 
 })
 
+app.get('/api/films', (req, res)=>{
+    const sql = 'select * from movies'
+
+    connection.query(sql, (err, results)=>{
+        if(err) return res.status(500).json({
+            error: true,
+            message: err.message
+        })
+        console.log(results)
+        res.json(results)
+    })
+})
+
