@@ -1,7 +1,6 @@
-// Require the db connection
 const mysql = require('mysql2')
 
-// Establish a db connection
+
 const credentials = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -17,5 +16,6 @@ connection.connect(err => {
   }
   console.info('✅ Connection successfull');
 })
+
 
 module.exports = connection
