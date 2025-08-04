@@ -1,8 +1,12 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const Port = process.env.PORT
 const connection = require('./data/connection')
+app.use(express.static('public'))
+
+app.use(cors())
 
 app.listen(Port, () => {
     console.log(`server is now running on http://localhost:${Port}`)
